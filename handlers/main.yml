@@ -1,0 +1,9 @@
+---
+- name: restart newsyslog
+  service: name=newsyslog state=restarted
+
+- name: restart sendmail
+  service: name=sendmail state=restarted
+
+- name: restart syslogd
+  service: name=syslogd state=restarted
