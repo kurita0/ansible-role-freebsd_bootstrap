@@ -3,5 +3,8 @@
   with_items:
     - gtar
 
-- name: Create /usr/local/etc/newsyslog.conf.d
-  file: dest=/usr/local/etc/newsyslog.conf.d state=directory
+- name: Create .d dir
+  file: dest={{ item }} state=directory
+  with_items:
+    - /usr/local/etc/newsyslog.conf.d
+    - /usr/local/etc/syslog.d
