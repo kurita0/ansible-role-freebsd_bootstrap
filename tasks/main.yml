@@ -1,7 +1,10 @@
+# for get_url HTTPS
+- name: Install ca_root_nss
+  pkgng: name=ca_root_nss state=present
+
+# for unarchive
 - name: Install gtar
-  pkgng: name={{ item }} state=present
-  with_items:
-    - gtar
+  pkgng: name=gtar state=present
 
 - name: Create .d dir
   file: dest={{ item }} state=directory
